@@ -1,5 +1,5 @@
 //
-//  ColumnChartViewModelTest.swift
+//  ColumnChartViewModelTests.swift
 //  ColumnChartTests
 //
 //  Created by Dr. Simon Bogutzky.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import ColumnChart
 
-class ColumnChartViewModelTest: XCTestCase {
+class ColumnChartViewModelTests: XCTestCase {
 
     func testInitWithEmptyColumnsArray() throws {
         // given

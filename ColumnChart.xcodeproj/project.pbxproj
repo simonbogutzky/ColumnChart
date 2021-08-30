@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D33C467626DCFAE2009D29B8 /* ColumnChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C467526DCFAE2009D29B8 /* ColumnChartViewModel.swift */; };
-		D33C467826DCFB43009D29B8 /* ColumnChartViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C467726DCFB43009D29B8 /* ColumnChartViewModelTest.swift */; };
+		D33C467826DCFB43009D29B8 /* ColumnChartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C467726DCFB43009D29B8 /* ColumnChartViewModelTests.swift */; };
 		D33C467C26DD01B5009D29B8 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C467B26DD01B5009D29B8 /* Column.swift */; };
 		D33C467E26DD0405009D29B8 /* ColumnChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C467D26DD0405009D29B8 /* ColumnChartView.swift */; };
 		D33C468126DD0959009D29B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D33C468326DD0959009D29B8 /* Localizable.strings */; };
@@ -32,7 +32,7 @@
 
 /* Begin PBXFileReference section */
 		D33C467526DCFAE2009D29B8 /* ColumnChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnChartViewModel.swift; sourceTree = "<group>"; };
-		D33C467726DCFB43009D29B8 /* ColumnChartViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnChartViewModelTest.swift; sourceTree = "<group>"; };
+		D33C467726DCFB43009D29B8 /* ColumnChartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnChartViewModelTests.swift; sourceTree = "<group>"; };
 		D33C467B26DD01B5009D29B8 /* Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
 		D33C467D26DD0405009D29B8 /* ColumnChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnChartView.swift; sourceTree = "<group>"; };
 		D33C468226DD0959009D29B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A9477B26DCF28900CF1183 /* ColumnChartTests.swift */,
-				D33C467726DCFB43009D29B8 /* ColumnChartViewModelTest.swift */,
+				D33C467726DCFB43009D29B8 /* ColumnChartViewModelTests.swift */,
 				D3A9477D26DCF28900CF1183 /* Info.plist */,
 			);
 			path = ColumnChartTests;
@@ -233,7 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3A9477C26DCF28900CF1183 /* ColumnChartTests.swift in Sources */,
-				D33C467826DCFB43009D29B8 /* ColumnChartViewModelTest.swift in Sources */,
+				D33C467826DCFB43009D29B8 /* ColumnChartViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
