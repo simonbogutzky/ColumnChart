@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D33C467626DCFAE2009D29B8 /* ColumnChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C467526DCFAE2009D29B8 /* ColumnChartViewModel.swift */; };
+		D33C467826DCFB43009D29B8 /* ColumnChartViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C467726DCFB43009D29B8 /* ColumnChartViewModelTest.swift */; };
+		D33C467C26DD01B5009D29B8 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C467B26DD01B5009D29B8 /* Column.swift */; };
 		D363F58C26DCF8DE00298B95 /* ColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363F58B26DCF8DE00298B95 /* ColumnView.swift */; };
 		D3A9476A26DCF28500CF1183 /* ColumnChartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9476926DCF28500CF1183 /* ColumnChartApp.swift */; };
 		D3A9476C26DCF28500CF1183 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9476B26DCF28500CF1183 /* ContentView.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D33C467526DCFAE2009D29B8 /* ColumnChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnChartViewModel.swift; sourceTree = "<group>"; };
+		D33C467726DCFB43009D29B8 /* ColumnChartViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnChartViewModelTest.swift; sourceTree = "<group>"; };
+		D33C467B26DD01B5009D29B8 /* Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
 		D363F58B26DCF8DE00298B95 /* ColumnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnView.swift; sourceTree = "<group>"; };
 		D3A9476626DCF28500CF1183 /* ColumnChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColumnChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A9476926DCF28500CF1183 /* ColumnChartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnChartApp.swift; sourceTree = "<group>"; };
@@ -77,10 +83,12 @@
 		D3A9476826DCF28500CF1183 /* ColumnChart */ = {
 			isa = PBXGroup;
 			children = (
+				D3A9476D26DCF28800CF1183 /* Assets.xcassets */,
+				D33C467B26DD01B5009D29B8 /* Column.swift */,
 				D3A9476926DCF28500CF1183 /* ColumnChartApp.swift */,
+				D33C467526DCFAE2009D29B8 /* ColumnChartViewModel.swift */,
 				D363F58B26DCF8DE00298B95 /* ColumnView.swift */,
 				D3A9476B26DCF28500CF1183 /* ContentView.swift */,
-				D3A9476D26DCF28800CF1183 /* Assets.xcassets */,
 				D3A9477226DCF28800CF1183 /* Info.plist */,
 				D3A9476F26DCF28800CF1183 /* Preview Content */,
 			);
@@ -99,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A9477B26DCF28900CF1183 /* ColumnChartTests.swift */,
+				D33C467726DCFB43009D29B8 /* ColumnChartViewModelTest.swift */,
 				D3A9477D26DCF28900CF1183 /* Info.plist */,
 			);
 			path = ColumnChartTests;
@@ -204,8 +213,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D363F58C26DCF8DE00298B95 /* ColumnView.swift in Sources */,
+				D33C467626DCFAE2009D29B8 /* ColumnChartViewModel.swift in Sources */,
 				D3A9476C26DCF28500CF1183 /* ContentView.swift in Sources */,
 				D3A9476A26DCF28500CF1183 /* ColumnChartApp.swift in Sources */,
+				D33C467C26DD01B5009D29B8 /* Column.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3A9477C26DCF28900CF1183 /* ColumnChartTests.swift in Sources */,
+				D33C467826DCFB43009D29B8 /* ColumnChartViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
