@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ColumnChartView: View {
     
-    //MARK: Properties
+    // MARK: Properties
     @ObservedObject var viewModel: ColumnChartViewModel
     
     var body: some View {
