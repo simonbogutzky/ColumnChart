@@ -35,7 +35,7 @@ struct ContentView: View {
     
     // MARK: Initializer
     init() {
-        UISegmentedControl.appearance().selectedSegmentTintColor = .darkGray
+        UISegmentedControl.appearance().selectedSegmentTintColor = .gray
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
     }
