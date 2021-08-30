@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D363F58C26DCF8DE00298B95 /* ColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363F58B26DCF8DE00298B95 /* ColumnView.swift */; };
 		D3A9476A26DCF28500CF1183 /* ColumnChartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9476926DCF28500CF1183 /* ColumnChartApp.swift */; };
 		D3A9476C26DCF28500CF1183 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9476B26DCF28500CF1183 /* ContentView.swift */; };
 		D3A9476E26DCF28800CF1183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A9476D26DCF28800CF1183 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D363F58B26DCF8DE00298B95 /* ColumnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnView.swift; sourceTree = "<group>"; };
 		D3A9476626DCF28500CF1183 /* ColumnChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColumnChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A9476926DCF28500CF1183 /* ColumnChartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnChartApp.swift; sourceTree = "<group>"; };
 		D3A9476B26DCF28500CF1183 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A9476926DCF28500CF1183 /* ColumnChartApp.swift */,
+				D363F58B26DCF8DE00298B95 /* ColumnView.swift */,
 				D3A9476B26DCF28500CF1183 /* ContentView.swift */,
 				D3A9476D26DCF28800CF1183 /* Assets.xcassets */,
 				D3A9477226DCF28800CF1183 /* Info.plist */,
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D363F58C26DCF8DE00298B95 /* ColumnView.swift in Sources */,
 				D3A9476C26DCF28500CF1183 /* ContentView.swift in Sources */,
 				D3A9476A26DCF28500CF1183 /* ColumnChartApp.swift in Sources */,
 			);
