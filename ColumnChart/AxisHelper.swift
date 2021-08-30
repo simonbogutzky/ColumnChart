@@ -1,6 +1,6 @@
 //
 //  AxisHelper.swift
-//  ColumnChartTests
+//  ColumnChart
 //
 //  Created by Dr. Simon Bogutzky.
 //
