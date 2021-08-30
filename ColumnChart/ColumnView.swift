@@ -16,6 +16,7 @@ struct ColumnView: View{
     var cornerRadius: CGFloat = 0.0
     var foregroundColor: Color = .blue
     var backgroundColor: Color = .white
+    @State var columnHeight: CGFloat = 0.0
     
     var body: some View {
         VStack {
@@ -23,7 +24,12 @@ struct ColumnView: View{
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .frame(width: columnWidth, height: 200).foregroundColor(backgroundColor)
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .frame(width: columnWidth, height: (value / maxValue * 200.0)).foregroundColor(foregroundColor)
+                    .frame(width: columnWidth, height: columnHeight)
+                    .foregroundColor(foregroundColor)
+            }
+        }.onAppear{
+            withAnimation(.easeOut(duration: 1.0)) {
+                self.columnHeight = value / maxValue * 200.0
             }
         }
     }
