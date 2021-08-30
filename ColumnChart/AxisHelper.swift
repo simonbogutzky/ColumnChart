@@ -8,6 +8,8 @@
 import Foundation
 
 struct AxisHelper {
+    
+    // MARK: Methods
     func computeAxisValues(min: Double, max: Double) -> [Double] {
         let labelCount = 4
         let granularity = 1.0
