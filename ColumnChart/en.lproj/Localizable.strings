@@ -11,3 +11,33 @@
 "sat" = "Sat";
 
 "sun" = "Sun";
+
+"jan" = "J";
+
+"feb" = "F";
+
+"mar" = "M";
+
+"apr" = "A";
+
+"may" = "M";
+
+"jun" = "J";
+
+"jul" = "J";
+
+"aug" = "A";
+
+"sep" = "S";
+
+"oct" = "O";
+
+"nov" = "N";
+
+"dec" = "D";
+
+"selection" = "Selection";
+
+"weekly_balance" = "Weekly balance";
+
+"annual_balance" = "Annual balance";
