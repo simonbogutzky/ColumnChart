@@ -19,7 +19,6 @@
 		D3A9476C26DCF28500CF1183 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9476B26DCF28500CF1183 /* ContentView.swift */; };
 		D3A9476E26DCF28800CF1183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A9476D26DCF28800CF1183 /* Assets.xcassets */; };
 		D3A9477126DCF28800CF1183 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A9477026DCF28800CF1183 /* Preview Assets.xcassets */; };
-		D3A9477C26DCF28900CF1183 /* ColumnChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A9477B26DCF28900CF1183 /* ColumnChartTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		D3A9477026DCF28800CF1183 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3A9477226DCF28800CF1183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3A9477726DCF28900CF1183 /* ColumnChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColumnChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3A9477B26DCF28900CF1183 /* ColumnChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnChartTests.swift; sourceTree = "<group>"; };
 		D3A9477D26DCF28900CF1183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				D33C46BF26DD21A0009D29B8 /* AxisHelperTests.swift */,
-				D3A9477B26DCF28900CF1183 /* ColumnChartTests.swift */,
 				D33C467726DCFB43009D29B8 /* ColumnChartViewModelTests.swift */,
 				D3A9477D26DCF28900CF1183 /* Info.plist */,
 			);
@@ -239,7 +236,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3A9477C26DCF28900CF1183 /* ColumnChartTests.swift in Sources */,
 				D33C46C026DD21A0009D29B8 /* AxisHelperTests.swift in Sources */,
 				D33C467826DCFB43009D29B8 /* ColumnChartViewModelTests.swift in Sources */,
 			);
