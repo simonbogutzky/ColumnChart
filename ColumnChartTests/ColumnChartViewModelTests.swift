@@ -10,6 +10,7 @@ import XCTest
 
 class ColumnChartViewModelTests: XCTestCase {
 
+    // MARK: Tests
     func testInitWithEmptyColumnsArray() throws {
         // given
         let sut = ColumnChartViewModel(columns: [], yAxisUnit: "kcal")
