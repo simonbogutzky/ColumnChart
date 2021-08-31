@@ -12,7 +12,7 @@ class ColumnChartViewModel: ObservableObject {
     // MARK: Properties
     @Published var columns: [Column]
     @Published var columnWidth: Double!
-    @Published var columnMaxValue: Double!
+    @Published var maxColumnValue: Double!
     @Published var yAxisLabels: [YAxisLabel]
     
     var maxColumnHeight: Double {
@@ -44,19 +44,19 @@ class ColumnChartViewModel: ObservableObject {
         self._maxColumnHeight = viewHeight - 20.0
         
         guard columns.count != 0 else {
-            self.columnMaxValue = 0.0
+            self.maxColumnValue = 0.0
             self.columnWidth = defaultColumnWidth
             return
         }
         
-        computeColumnMaxValue()
+        computeMaxColumnValue()
         computeColumnWidth()
         computeAxisLabels()
     }
     
     // MARK: Methods
-    private func computeColumnMaxValue() {
-        self.columnMaxValue = columns.map {
+    private func computeMaxColumnValue() {
+        self.maxColumnValue = columns.map {
             $0.value
         }.max()
     }
@@ -67,7 +67,7 @@ class ColumnChartViewModel: ObservableObject {
     
     private func computeAxisLabels() {
         let axisHelper = AxisHelper()
-        let axisValues = axisHelper.computeAxisValues(min: 0, max: self.columnMaxValue)
+        let axisValues = axisHelper.computeAxisValues(min: 0, max: self.maxColumnValue)
         
         let maxAxisValue = axisValues.max()!
         let minAxisValue = axisValues.min()!
