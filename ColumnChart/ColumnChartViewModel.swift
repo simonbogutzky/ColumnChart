@@ -13,24 +13,30 @@ class ColumnChartViewModel: ObservableObject {
     @Published var columns: [Column]
     @Published var columnWidth: Double!
     @Published var columnMaxValue: Double!
+    @Published var yAxisLabels: [YAxisLabel]
     
     var foregroundColor: Color = .blue
     var backgroundColor: Color = .blue
     var textColor: Color = .black
     var cornerRadius = 0.0
     var yAxisUnit: String
+    var axisLineColor: Color = .black
+    var zeroAxisLineColor: Color = .red
     
     private let defaultColumnCount = 7.0
     private let defaultColumnWidth = 30.0
     
     // MARK: Initializer
-    init(columns: [Column], yAxisUnit: String, foregroundColor: Color = .blue, backgroundColor: Color = .white, textColor: Color = .black, cornerRadius: Double = 0.0) {
+    init(columns: [Column], yAxisUnit: String, foregroundColor: Color = .blue, backgroundColor: Color = .white, textColor: Color = .black, cornerRadius: Double = 0.0, zeroAxisLineColor: Color = .red, axisLineColor: Color = .black) {
         self.columns = columns
         self.yAxisUnit = yAxisUnit
         self.foregroundColor = foregroundColor
         self.backgroundColor = backgroundColor
         self.textColor = textColor
         self.cornerRadius = cornerRadius
+        self.yAxisLabels = []
+        self.zeroAxisLineColor = zeroAxisLineColor
+        self.axisLineColor = axisLineColor
         
         guard columns.count != 0 else {
             self.columnMaxValue = 0.0
@@ -40,6 +46,7 @@ class ColumnChartViewModel: ObservableObject {
         
         computeColumnMaxValue()
         computeColumnWidth()
+        computeAxisLabels()
     }
     
     // MARK: Methods
@@ -51,5 +58,21 @@ class ColumnChartViewModel: ObservableObject {
     
     private func computeColumnWidth() {
         self.columnWidth = defaultColumnCount / Double(columns.count) * defaultColumnWidth
+    }
+    
+    private func computeAxisLabels() {
+        let axisHelper = AxisHelper()
+        let axisValues = axisHelper.computeAxisValues(min: 0, max: self.columnMaxValue)
+        
+        let maxAxisValue = axisValues.max()!
+        let minAxisValue = axisValues.min()!
+        let factor = 200.0 / maxAxisValue
+        
+        yAxisLabels.removeAll()
+        
+        for axisValue in axisValues {
+            let lineColor = axisValue == minAxisValue ? self.zeroAxisLineColor : self.axisLineColor
+            yAxisLabels.append(YAxisLabel(value: axisValue, paddingFromTop: abs(axisValue * factor - 200.0) - 5, lineColor: lineColor))
+        }
     }
 }

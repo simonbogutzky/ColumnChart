@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D307F03126DE2A5A00C83BBE /* YAxisLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D307F03026DE2A5A00C83BBE /* YAxisLabel.swift */; };
 		D33C467626DCFAE2009D29B8 /* ColumnChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C467526DCFAE2009D29B8 /* ColumnChartViewModel.swift */; };
 		D33C467826DCFB43009D29B8 /* ColumnChartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C467726DCFB43009D29B8 /* ColumnChartViewModelTests.swift */; };
 		D33C467C26DD01B5009D29B8 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C467B26DD01B5009D29B8 /* Column.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D307F03026DE2A5A00C83BBE /* YAxisLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisLabel.swift; sourceTree = "<group>"; };
 		D33C467526DCFAE2009D29B8 /* ColumnChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnChartViewModel.swift; sourceTree = "<group>"; };
 		D33C467726DCFB43009D29B8 /* ColumnChartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnChartViewModelTests.swift; sourceTree = "<group>"; };
 		D33C467B26DD01B5009D29B8 /* Column.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				D33C467526DCFAE2009D29B8 /* ColumnChartViewModel.swift */,
 				D363F58B26DCF8DE00298B95 /* ColumnView.swift */,
 				D3A9476B26DCF28500CF1183 /* ContentView.swift */,
+				D307F03026DE2A5A00C83BBE /* YAxisLabel.swift */,
 				D3A9477226DCF28800CF1183 /* Info.plist */,
 				D3A9476F26DCF28800CF1183 /* Preview Content */,
 				D33C468326DD0959009D29B8 /* Localizable.strings */,
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D363F58C26DCF8DE00298B95 /* ColumnView.swift in Sources */,
+				D307F03126DE2A5A00C83BBE /* YAxisLabel.swift in Sources */,
 				D33C467626DCFAE2009D29B8 /* ColumnChartViewModel.swift in Sources */,
 				D3A9476C26DCF28500CF1183 /* ContentView.swift in Sources */,
 				D3A9476A26DCF28500CF1183 /* ColumnChartApp.swift in Sources */,

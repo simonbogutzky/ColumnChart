@@ -14,7 +14,7 @@ struct ColumnChartView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            HStack(alignment: .center, spacing: 10) {
+            HStack(alignment: .center, spacing: 8) {
                 ForEach(viewModel.columns, id: \.self) { column in
                     VStack {
                         ColumnView(value: CGFloat(column.value), maxValue: CGFloat(viewModel.columnMaxValue), columnWidth: CGFloat(viewModel.columnWidth), cornerRadius: CGFloat(viewModel.cornerRadius), foregroundColor: viewModel.foregroundColor, backgroundColor: viewModel.backgroundColor)
@@ -24,6 +24,19 @@ struct ColumnChartView: View {
                             .lineLimit(1)
                     }
                 }
+            }.padding(.leading, 64)
+
+            ForEach(viewModel.yAxisLabels, id: \.self) { label in
+                HStack {
+                    Text(String(format:" %0.0f %@", label.value, viewModel.yAxisUnit))
+                        .foregroundColor(viewModel.textColor)
+                        .font(.caption)
+                        .lineLimit(1)
+                        .frame(width: 64, height: 10, alignment: .trailing)
+                    Rectangle()
+                        .foregroundColor(label.lineColor)
+                        .frame(height: 0.5, alignment: .leading)
+                }.padding(.top, CGFloat(label.paddingFromTop))
             }
         }
     }
