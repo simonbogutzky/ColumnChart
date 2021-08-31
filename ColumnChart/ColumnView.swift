@@ -12,6 +12,7 @@ struct ColumnView: View{
     // MARK: Properties
     var value: CGFloat
     var maxValue: CGFloat
+    var maxColumnHeight: CGFloat = 200.0
     var columnWidth: CGFloat = 30.0
     var cornerRadius: CGFloat = 0.0
     var foregroundColor: Color = .blue
@@ -22,14 +23,14 @@ struct ColumnView: View{
         VStack {
             ZStack (alignment: .bottom) {
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .frame(width: columnWidth, height: 200).foregroundColor(backgroundColor)
+                    .frame(width: columnWidth, height: maxColumnHeight).foregroundColor(backgroundColor)
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .frame(width: columnWidth, height: columnHeight)
                     .foregroundColor(foregroundColor)
             }
         }.onAppear{
             withAnimation(.easeOut(duration: 1.0)) {
-                self.columnHeight = value / maxValue * 200.0
+                self.columnHeight = value / maxValue * maxColumnHeight
             }
         }
     }

@@ -15,6 +15,9 @@ class ColumnChartViewModel: ObservableObject {
     @Published var columnMaxValue: Double!
     @Published var yAxisLabels: [YAxisLabel]
     
+    var maxColumnHeight: Double {
+        _maxColumnHeight
+    }
     var foregroundColor: Color = .blue
     var backgroundColor: Color = .blue
     var textColor: Color = .black
@@ -25,9 +28,10 @@ class ColumnChartViewModel: ObservableObject {
     
     private let defaultColumnCount = 7.0
     private let defaultColumnWidth = 30.0
+    private var _maxColumnHeight = 200.0
     
     // MARK: Initializer
-    init(columns: [Column], yAxisUnit: String, foregroundColor: Color = .blue, backgroundColor: Color = .white, textColor: Color = .black, cornerRadius: Double = 0.0, zeroAxisLineColor: Color = .red, axisLineColor: Color = .black) {
+    init(columns: [Column], yAxisUnit: String, foregroundColor: Color = .blue, backgroundColor: Color = .white, textColor: Color = .black, cornerRadius: Double = 0.0, zeroAxisLineColor: Color = .red, axisLineColor: Color = .black, viewHeight: Double = 220.0) {
         self.columns = columns
         self.yAxisUnit = yAxisUnit
         self.foregroundColor = foregroundColor
@@ -37,6 +41,7 @@ class ColumnChartViewModel: ObservableObject {
         self.yAxisLabels = []
         self.zeroAxisLineColor = zeroAxisLineColor
         self.axisLineColor = axisLineColor
+        self._maxColumnHeight = viewHeight - 20.0
         
         guard columns.count != 0 else {
             self.columnMaxValue = 0.0
@@ -66,13 +71,13 @@ class ColumnChartViewModel: ObservableObject {
         
         let maxAxisValue = axisValues.max()!
         let minAxisValue = axisValues.min()!
-        let factor = 200.0 / maxAxisValue
+        let factor = maxColumnHeight / maxAxisValue
         
         yAxisLabels.removeAll()
         
         for axisValue in axisValues {
             let lineColor = axisValue == minAxisValue ? self.zeroAxisLineColor : self.axisLineColor
-            yAxisLabels.append(YAxisLabel(value: axisValue, paddingFromTop: abs(axisValue * factor - 200.0) - 5, lineColor: lineColor))
+            yAxisLabels.append(YAxisLabel(value: axisValue, paddingFromTop: abs(axisValue * factor - maxColumnHeight) - 5, lineColor: lineColor))
         }
     }
 }

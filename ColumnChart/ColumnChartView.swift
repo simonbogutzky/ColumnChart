@@ -17,7 +17,7 @@ struct ColumnChartView: View {
             HStack(alignment: .center, spacing: 8) {
                 ForEach(viewModel.columns, id: \.self) { column in
                     VStack {
-                        ColumnView(value: CGFloat(column.value), maxValue: CGFloat(viewModel.columnMaxValue), columnWidth: CGFloat(viewModel.columnWidth), cornerRadius: CGFloat(viewModel.cornerRadius), foregroundColor: viewModel.foregroundColor, backgroundColor: viewModel.backgroundColor)
+                        ColumnView(value: CGFloat(column.value), maxValue: CGFloat(viewModel.columnMaxValue), maxColumnHeight: CGFloat(viewModel.maxColumnHeight), columnWidth: CGFloat(viewModel.columnWidth), cornerRadius: CGFloat(viewModel.cornerRadius), foregroundColor: viewModel.foregroundColor, backgroundColor: viewModel.backgroundColor)
                         Text(LocalizedStringKey(column.key))
                             .foregroundColor(viewModel.textColor)
                             .font(.caption)
