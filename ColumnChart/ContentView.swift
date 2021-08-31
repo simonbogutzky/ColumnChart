@@ -26,7 +26,7 @@ struct ContentView: View {
                     Text(LocalizedStringKey("annual_balance")).tag(1)
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .padding(.horizontal, 10)
+                .padding(.all, 10)
                 
                 ColumnChartView(viewModel: viewModels[self.pickerSelection])
             }
