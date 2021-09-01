@@ -30,7 +30,11 @@ struct ColumnView: View{
             }
         }.onAppear{
             withAnimation(.easeOut(duration: 1.0)) {
-                self.columnHeight = value / maxValue * maxColumnHeight
+                let devisor = maxValue * maxColumnHeight
+                if devisor > 0 {
+                    self.columnHeight = value / maxValue * maxColumnHeight
+                }
+
             }
         }
     }
