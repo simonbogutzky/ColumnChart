@@ -25,6 +25,12 @@ class ColumnChartViewModel: ObservableObject {
     var yAxisUnit: String
     var axisLineColor: Color = .black
     var zeroAxisLineColor: Color = .red
+    var viewHeight: Double = 220.0 {
+        didSet {
+            self._maxColumnHeight = viewHeight - 20.0
+            computeAxisLabels()
+        }
+    }
     
     private let defaultColumnCount = 7.0
     private let defaultColumnWidth = 30.0
