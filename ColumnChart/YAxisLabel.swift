@@ -9,7 +9,7 @@ import SwiftUI
 
 struct YAxisLabel: Hashable {
     static func == (lhs: YAxisLabel, rhs: YAxisLabel) -> Bool {
-        lhs.value == rhs.value
+        lhs.value == rhs.value && lhs.paddingFromTop == rhs.paddingFromTop
     }
     
     var value: Double

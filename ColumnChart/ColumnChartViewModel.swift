@@ -16,7 +16,7 @@ class ColumnChartViewModel: ObservableObject {
         }
     }
     @Published var columnWidth: Double!
-    @Published var maxColumnValue: Double! = -0.1
+    @Published var maxColumnChartValue: Double!
     @Published var yAxisLabels: [YAxisLabel]
 
     var maxColumnHeight: Double {
@@ -31,9 +31,9 @@ class ColumnChartViewModel: ObservableObject {
     var zeroAxisLineColor: Color = .red
     var viewHeight: Double = 220.0 {
         didSet {
-            if self._maxColumnHeight != viewHeight - 20.0 {
-                self._maxColumnHeight = viewHeight - 20.0
-                computeAxisLabels()
+            if self.maxColumnHeight != viewHeight - 20.0 {
+                _maxColumnHeight = viewHeight - 20.0
+                computeProperities()
             }
         }
     }
@@ -59,6 +59,13 @@ class ColumnChartViewModel: ObservableObject {
     }
 
     // MARK: Methods
+    private func computeMaxColumnChartValue() {
+        let maxColumnValue = computeMaxColumnValue()
+        let axisValues = AxisHelper().computeAxisValues(min: 0, max: maxColumnValue)
+        let maxAxisValue = axisValues.max()!
+        self.maxColumnChartValue = max(maxColumnValue, maxAxisValue)
+    }
+    
     private func computeMaxColumnValue() -> Double {
         columns.map {
             $0.value
@@ -70,35 +77,26 @@ class ColumnChartViewModel: ObservableObject {
     }
 
     private func computeAxisLabels() {
-        let axisHelper = AxisHelper()
-        let axisValues = axisHelper.computeAxisValues(min: 0, max: self.maxColumnValue)
-
-        var maxAxisValue = axisValues.max()!
-        let minAxisValue = axisValues.min()!
-        if self.maxColumnValue != 0 { maxAxisValue = self.maxColumnValue}
-        let factor = maxColumnHeight / maxAxisValue
+        let maxColumnValue = computeMaxColumnValue()
+        let axisValues = AxisHelper().computeAxisValues(min: 0, max: maxColumnValue)
+        let factor = maxColumnHeight / self.maxColumnChartValue
 
         yAxisLabels.removeAll()
 
         for axisValue in axisValues {
-            let lineColor = axisValue == minAxisValue ? self.zeroAxisLineColor : self.axisLineColor
+            let lineColor = axisValue == 0.0 ? self.zeroAxisLineColor : self.axisLineColor
             yAxisLabels.append(YAxisLabel(value: axisValue, paddingFromTop: abs(axisValue * factor - maxColumnHeight) - 5, lineColor: lineColor))
         }
     }
 
     private func computeProperities() {
         guard columns.count != 0 else {
-            self.maxColumnValue = 0.0
             self.columnWidth = defaultColumnWidth
-            self.computeAxisLabels()
             return
         }
-
-        let maxColumnValue = computeMaxColumnValue()
-        if maxColumnValue != self.maxColumnValue {
-            self.maxColumnValue = maxColumnValue
-            computeColumnWidth()
-            computeAxisLabels()
-        }
+        
+        self.computeColumnWidth()
+        self.computeMaxColumnChartValue()
+        self.computeAxisLabels()
     }
 }
