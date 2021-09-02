@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 
 class ColumnChartViewModel: ObservableObject {
 
@@ -17,7 +16,7 @@ class ColumnChartViewModel: ObservableObject {
         }
     }
     @Published var columnWidth: Double!
-    @Published var maxColumnValue: Double!
+    @Published var maxColumnValue: Double! = -0.1
     @Published var yAxisLabels: [YAxisLabel]
 
     var maxColumnHeight: Double {
@@ -32,16 +31,16 @@ class ColumnChartViewModel: ObservableObject {
     var zeroAxisLineColor: Color = .red
     var viewHeight: Double = 220.0 {
         didSet {
-            self._maxColumnHeight = viewHeight - 20.0
-            computeAxisLabels()
+            if self._maxColumnHeight != viewHeight - 20.0 {
+                self._maxColumnHeight = viewHeight - 20.0
+                computeAxisLabels()
+            }
         }
     }
 
     private let defaultColumnCount = 7.0
     private let defaultColumnWidth = 30.0
     private var _maxColumnHeight = 200.0
-
-    private var cancellables = Set<AnyCancellable>()
 
     // MARK: Initializer
     init(columns: [Column], yAxisUnit: String, foregroundColor: Color = .blue, backgroundColor: Color = .white, textColor: Color = .black, cornerRadius: Double = 0.0, zeroAxisLineColor: Color = .red, axisLineColor: Color = .black, viewHeight: Double = 220.0) {
@@ -60,10 +59,10 @@ class ColumnChartViewModel: ObservableObject {
     }
 
     // MARK: Methods
-    private func computeMaxColumnValue() {
-        self.maxColumnValue = columns.map {
+    private func computeMaxColumnValue() -> Double {
+        columns.map {
             $0.value
-        }.max()
+        }.max()!
     }
 
     private func computeColumnWidth() {
@@ -74,8 +73,10 @@ class ColumnChartViewModel: ObservableObject {
         let axisHelper = AxisHelper()
         let axisValues = axisHelper.computeAxisValues(min: 0, max: self.maxColumnValue)
 
+        var maxAxisValue = axisValues.max()!
         let minAxisValue = axisValues.min()!
-        let factor = maxColumnHeight / self.maxColumnValue
+        if self.maxColumnValue != 0 { maxAxisValue = self.maxColumnValue}
+        let factor = maxColumnHeight / maxAxisValue
 
         yAxisLabels.removeAll()
 
@@ -84,7 +85,7 @@ class ColumnChartViewModel: ObservableObject {
             yAxisLabels.append(YAxisLabel(value: axisValue, paddingFromTop: abs(axisValue * factor - maxColumnHeight) - 5, lineColor: lineColor))
         }
     }
-    
+
     private func computeProperities() {
         guard columns.count != 0 else {
             self.maxColumnValue = 0.0
@@ -93,8 +94,11 @@ class ColumnChartViewModel: ObservableObject {
             return
         }
 
-        computeMaxColumnValue()
-        computeColumnWidth()
-        computeAxisLabels()
+        let maxColumnValue = computeMaxColumnValue()
+        if maxColumnValue != self.maxColumnValue {
+            self.maxColumnValue = maxColumnValue
+            computeColumnWidth()
+            computeAxisLabels()
+        }
     }
 }
