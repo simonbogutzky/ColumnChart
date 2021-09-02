@@ -146,4 +146,16 @@ class AxisHelperTests: XCTestCase {
         // then
         XCTAssertEqual(expected, axisValues)
     }
+    
+    func testComputeAxisValuesGivenMaxValue100() throws {
+        // given
+        let maxValue = 100.0
+        let expected = [0.0, 30.0, 60.0, 90.0]
+        
+        // when
+        let axisValues = sut.computeAxisValues(min: minValue, max: maxValue)
+        
+        // then
+        XCTAssertEqual(expected, axisValues)
+    }
 }

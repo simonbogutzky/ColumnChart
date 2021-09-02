@@ -74,9 +74,8 @@ class ColumnChartViewModel: ObservableObject {
         let axisHelper = AxisHelper()
         let axisValues = axisHelper.computeAxisValues(min: 0, max: self.maxColumnValue)
 
-        let maxAxisValue = axisValues.max()!
         let minAxisValue = axisValues.min()!
-        let factor = maxColumnHeight / maxAxisValue
+        let factor = maxColumnHeight / self.maxColumnValue
 
         yAxisLabels.removeAll()
 
